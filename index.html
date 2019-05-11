@@ -30,22 +30,14 @@
 	<img src="" id="dataimg">
 	<script type="text/javascript">
 		function getUrlParams() {
-			var url=window.location.href;
-			var params = {};
-			(url + '?').split('?')[1].split('&').forEach(function (pair) {
-				pair = (pair + '=').split('=').map(decodeURIComponent);
-				if (pair[0].length) {
-					params[pair[0]] = pair[1];
-				}
-			});
-			return params;
+			return window.location.href.substring(44);
 		};
-		if(getUrlParams().data=="" || typeof(getUrlParams().data)=="undefined"){
+		if(getUrlParams().data=="" || typeof(getUrlParams())=="undefined"){
 			document.write("<div>How can i use<br>You can use add like ?data=data:image/png;base64,iVBORw0KGgoAAAANSU...");
 			document.write("<br><br>어떻게 사용하나요?<br>주소 뒤에 ?data=data:image/png;base64,iVBORw0KGgoAAAANSU... 와 같이 붙여 넣음으로 가능합니다.</div>");
 			document.getElementById("dataimg").style.display="none";
 		}else{
-			document.getElementById("dataimg").src= getUrlParams().data;
+			document.getElementById("dataimg").src= getUrlParams();
 		}
 	</script>
 </body>
