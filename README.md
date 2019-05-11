@@ -1,4 +1,4 @@
-# Data Url To Img
+# Data Url To Img Viewer
 
 ## How can I use
   just add parameter "data"
@@ -12,3 +12,6 @@
   background: #0e0e0e;
   
   and img on center
+
+## I am use
+  non server save and send file or viewing
