@@ -1,7 +1,7 @@
 # Data Url To Img Viewer
 
 ## How can I use
-  just add #data: ...
+  just add #data:image/png;base64,iVBORw0KGgoAAAANSU ...
   
   like
   https://hi098123.github.io/Data-Url-To-Img/#data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==
