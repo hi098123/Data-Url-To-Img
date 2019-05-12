@@ -1,4 +1,4 @@
-# Data Url To Img Viewer
+# Data Url Viewer
 
 ## How can I use
   just add #data:image/png;base64,iVBORw0KGgoAAAANSU ...
