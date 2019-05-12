@@ -29,7 +29,7 @@
 	</style>
 </head>
 <body>
-	<img src="" id="dataimg">
+	<img id="dataimg">
 	<script type="text/javascript" src="./download.min.js"></script>
 	<script type="text/javascript">
 		function getUrlId() {
@@ -67,6 +67,7 @@
 							case "html":
 								down="html";
 								document.documentElement.style.background="white";
+								document.documentElement.style.color="#000";
 								document.body.innerHTML=decodeURI(dataurl.substring(dataurl.indexOf(",")+1));
 								return true;
 								break;
