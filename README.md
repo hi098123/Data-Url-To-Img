@@ -24,7 +24,7 @@
   or select white layout #white#data:image/png;base64,iVBORw0K...
 
 # open source
-  download.js - dandavis
+  [download.js - dandavis](http://danml.com/download.html)
 
 ## I am use
   non server save and send file or viewing
