@@ -4,7 +4,12 @@
   just add #data:image/png;base64,iVBORw0KGgoAAAANSU ...
   
   like
+  
   https://hi098123.github.io/Data-Url-Viewer/#data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==
+  
+  or data:text/html;charset=UTF-8,<h1...
+  
+  https://hi098123.github.io/Data-Url-Viewer/#data:text/html;charset=UTF-8,%3Ch1%3ETitle%3C/h1%3E%3Cdiv%3EHello%20World%20test%20html%3C/div%3E
   
 ## Why not use param '?'
   becuase ?data= ... can go server and response (if uri too long server can response ERROR)
