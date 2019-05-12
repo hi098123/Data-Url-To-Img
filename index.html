@@ -17,7 +17,7 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 		}
-		div{
+		.hi098123_notice{
 			text-align: center;
 			margin: auto;
 			position: absolute;
@@ -91,11 +91,11 @@
 		}
 		var get=getUrlId();
 		if(typeof(get)=="undefined"){
-			document.write("<div>How can i use<br><br>You can use url add like #data:image/png;base64,iVBORw0KGgoAAAANSU...");
+			document.write("<div class='hi098123_notice'>How can i use<br><br>You can use url add like #data:image/png;base64,iVBORw0KGgoAAAANSU...");
 			document.write("<br><br><br>어떻게 사용하나요?<br><br>주소 뒤에 #data:image/png;base64,iVBORw0KGgoAAAANSU... 와 같이 붙여 넣음으로 가능합니다.</div>");
 			document.getElementById("dataimg").style.display="none";
 		}else if(get==false){
-			document.write("<div>Download Complete<br><br>다운로드 완료!</div>");
+			document.write("<div class='hi098123_notice'>Download Complete<br><br>다운로드 완료!</div>");
 			document.getElementById("dataimg").style.display="none";
 		}
 	</script>
