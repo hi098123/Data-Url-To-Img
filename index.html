@@ -19,9 +19,12 @@
 		}
 		div{
 			text-align: center;
+			margin: auto;
 			position: absolute;
-		    width: 100%;
-		    top: 40%;
+			left: 50%;
+			top: 50%;
+			width: 100%;
+			transform: translate(-50%, -50%);
 		}
 	</style>
 </head>
@@ -32,6 +35,8 @@
 		function getUrlId() {
 			var dataurl=window.location.href.substring(window.location.href.indexOf("#")+1);
 			if(dataurl=="" || typeof(dataurl)=="undefined" || dataurl==window.location.href){
+				document.documentElement.style.background="#0e0e0e";
+				document.documentElement.style.color="#fff";
 				return undefined;
 			}
 			if(dataurl.substring(0,4)!="data"){
@@ -39,9 +44,6 @@
 				if(color=="white"){
 					document.documentElement.style.background="white";
 					document.documentElement.style.color="#000";
-				}else{
-					document.documentElement.style.background="#0e0e0e";
-					document.documentElement.style.color="#fff";
 				}
 				dataurl=dataurl.substring(dataurl.indexOf("#")+1);
 			}else{
@@ -88,8 +90,8 @@
 		}
 		var get=getUrlId();
 		if(typeof(get)=="undefined"){
-			document.write("<div>How can i use<br>You can use add like #data:image/png;base64,iVBORw0KGgoAAAANSU...");
-			document.write("<br><br>어떻게 사용하나요?<br>주소 뒤에 #data:image/png;base64,iVBORw0KGgoAAAANSU... 와 같이 붙여 넣음으로 가능합니다.</div>");
+			document.write("<div>How can i use<br><br>You can use url add like #data:image/png;base64,iVBORw0KGgoAAAANSU...");
+			document.write("<br><br><br>어떻게 사용하나요?<br><br>주소 뒤에 #data:image/png;base64,iVBORw0KGgoAAAANSU... 와 같이 붙여 넣음으로 가능합니다.</div>");
 			document.getElementById("dataimg").style.display="none";
 		}else if(get==false){
 			document.write("<div>Download Complete<br><br>다운로드 완료!</div>");
