@@ -23,3 +23,7 @@
 
 ## I am use
   non server save and send file or viewing
+
+## BUT!
+  IE url max length is 2047.. it can't real data
+  i will find IE problem
