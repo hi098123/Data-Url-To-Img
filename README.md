@@ -12,7 +12,7 @@
   https://hi098123.github.io/Data-Url-Viewer/#data:text/html;charset=UTF-8,%3Ch1%3ETitle%3C/h1%3E%3Cdiv%3EHello%20World%20test%20html%3C/div%3E
   
 ## Why not use param '?'
-  becuase ?data= ... can go server and response (if uri too long server can response ERROR)
+  becuase ?data= ... can go server and response (if uri too long Server can response ERROR)
   
   just use # is html > id content
   
