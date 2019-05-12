@@ -6,12 +6,10 @@
 	<title>Data Img Viewer (by hi098123)</title>
 	<meta name="description" content="Viewing img from data url like chrome layout">
 	<style type="text/css">
-		html,body{
+		html{
 			margin: 0px;
-    		background: #0e0e0e;
     		width: 100%;
     		height: 100%;
-    		color: #fff;
 		}
 		#dataimg{
 			position: absolute;
@@ -29,16 +27,70 @@
 </head>
 <body>
 	<img src="" id="dataimg">
+	<script type="text/javascript" src="./download.min.js"></script>
 	<script type="text/javascript">
-		function getUrlParams() {
-			return window.location.href.substring(44);
-		};
-		if(getUrlParams().data=="" || typeof(getUrlParams())=="undefined"){
-			document.write("<div>How can i use<br>You can use add like ?data=data:image/png;base64,iVBORw0KGgoAAAANSU...");
-			document.write("<br><br>어떻게 사용하나요?<br>주소 뒤에 ?data=data:image/png;base64,iVBORw0KGgoAAAANSU... 와 같이 붙여 넣음으로 가능합니다.</div>");
+		function getUrlId() {
+			var dataurl=window.location.href.substring(window.location.href.indexOf("#")+1);
+			if(dataurl=="" || typeof(dataurl)=="undefined" || dataurl==window.location.href){
+				return undefined;
+			}
+			if(dataurl.substring(0,4)!="data"){
+				var	color=dataurl.substring(0,dataurl.indexOf("#"));
+				if(color=="white"){
+					document.documentElement.style.background="white";
+					document.documentElement.style.color="#000";
+				}
+				dataurl=dataurl.substring(dataurl.indexOf("#")+1);
+			}else{
+				document.documentElement.style.background="#0e0e0e";
+				document.documentElement.style.color="#fff";
+			}
+					
+			if(dataurl.substring(0,10)=="data:image"){
+				document.getElementById("dataimg").src=dataurl;
+				return true;
+			}else if(dataurl.substring(0,4)=="data"){
+				var mime= dataurl.substring(5,dataurl.indexOf(","));
+				if(mime.indexOf(";")!=-1){
+					mime=mime.substring(0,mime.indexOf(";"));
+				}
+				var down="";
+				if(mime.indexOf("/")!=-1){
+					if(mime.substring(0,4)=="text"){
+						var tmp=mime.substring(mime.indexOf("/")+1)
+						switch(tmp){
+							case "html":
+								down="html";
+								document.documentElement.style.background="white";
+								document.body.innerHTML=decodeURI(dataurl.substring(dataurl.indexOf(",")+1));
+								return true;
+								break;
+							case "xml":
+								down="xml";
+								break;
+							case "json":
+								down="json";
+								break;
+							default:
+								down="txt";
+								break;
+						}
+					}else{
+						down=mime.substring(mime.indexOf("/")+1);
+					}
+				}
+				download(dataurl, "test."+down, mime);
+				return false;
+			}
+		}
+		var get=getUrlId();
+		if(typeof(get)=="undefined"){
+			document.write("<div>How can i use<br>You can use add like #data:image/png;base64,iVBORw0KGgoAAAANSU...");
+			document.write("<br><br>어떻게 사용하나요?<br>주소 뒤에 #data:image/png;base64,iVBORw0KGgoAAAANSU... 와 같이 붙여 넣음으로 가능합니다.</div>");
 			document.getElementById("dataimg").style.display="none";
-		}else{
-			document.getElementById("dataimg").src= getUrlParams();
+		}else if(get==false){
+			document.write("<div>Download Complete<br><br>다운로드 완료!</div>");
+			document.getElementById("dataimg").style.display="none";
 		}
 	</script>
 </body>
