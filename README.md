@@ -30,4 +30,4 @@
 
 ## BUT!
   IE url max length is 2047.. it can't real data
-  i will find IE problem
+  i will fix IE problem
