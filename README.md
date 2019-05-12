@@ -8,7 +8,9 @@
   
 ## Why not use param '?'
   becuase ?data= ... can go server and response (if uri too long server can response ERROR)
+  
   just use # is html > id content
+  
   '#' can processing client side
   
   like
@@ -16,7 +18,9 @@
   
 ## BUT!
   IE url max length is 2047.. it can't real data
+  
   i will fix IE problem
+  
   if use url shortening services you can easily solve problem but i think It is not justified
   
 ## layout
